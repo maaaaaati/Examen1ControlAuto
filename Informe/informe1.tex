@@ -1,0 +1,181 @@
+\documentclass[journal]{IEEEtran}
+
+\usepackage{circuitikz}   
+\usepackage{tikz}
+\usepackage[spanish, es-noshorthands]{babel}
+\usepackage{float}
+\usepackage{instructivo}
+\usepackage{tabularx}
+\usepackage{array}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\graphicspath{{./}{./fig/}}
+\usepackage[natbib=true,style=trad-unsrt,backend=biber]{biblatex}
+\addbibresource{literatura.bib}
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+\usepackage{amsmath}
+\usetikzlibrary{shapes, arrows.meta, positioning, calc}
+ 
+% --- Estilos ---
+\tikzset{
+  block/.style={
+    draw, rectangle,
+    minimum width=3.2cm, minimum height=1.2cm,
+    align=center, font=\small
+  },
+  line/.style={draw, -{Latex[length=2.5mm, width=2mm]}},
+  siglabel/.style={font=\footnotesize, text=blue!65!black},
+  blklabel/.style={font=\footnotesize, right=0.15cm, text=black}
+}
+
+\begin{document}
+\setlength{\parindent}{4.2mm}
+\title{Parcial 1 Control Automático}
+
+\author{Matías~A.~Camacho,~\IEEEmembership{Estudiante,~TEC}
+        y~Juan~P.~Elizondo,~\IEEEmembership{Estudiante,~TEC}
+}
+
+% The paper headers
+\markboth{Laboratorio de control automático, IIS2026}%
+{Laboratorio de control automático}
+
+
+% make the title area
+\maketitle
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introducción}
+
+\IEEEPARstart{E}{l} presente trabajo aborda el diseño de compensadores y controladores clásicos para dos sistemas realimentados. En el primer problema se diseña un compensador en atraso (lag) para mejorar el error en régimen permanente ante una entrada rampa. En el segundo, se diseña y compara un controlador PID (o alguna de sus simplificaciones) frente a una red de compensación, para una planta de tercer orden sujeta a especificaciones de tiempo de asentamiento, sobreimpulso y error nulo en estado estacionario. En ambos casos se presentan los resultados intermedios (lugar de las raíces, ecuaciones características) que sustentan las decisiones de diseño.
+
+\section{Problema 1}
+
+
+\section{Problema 2}
+Se consideró la siguiente planta de tercer orden, teniendo en cuenta que tiene realimentación de \mbox{$H(s)=0.2$}.
+
+\begin{equation}\label{eq:Planta}
+G_p(s)=\frac{10(s+2)}{(s+1)(s+4)(s+8)}
+\end{equation}
+
+\begin{table}[H]
+        \centering
+        \caption{Características de la respuesta transitoria de la planta sin compensación}
+        \label{tab:caracteristicas-respuesta-noncomp}
+        \begin{tabular}{lc}
+                \hline
+                \textbf{Parámetro} & \textbf{Valor} \\
+                \hline
+                Tiempo de subida       & 1.8895 s \\
+                Tiempo transitorio  & 3.6401 s \\
+                Tiempo de asentamiento   & 3.6401 s \\
+                Mínimo de asentamiento    & 0.5628  \\
+                Máximo de asentamiento    & 0.6241  \\
+                Sobreimpulso      & 0\% \\
+                Subimpulso     & 0\% \\
+                Pico           & 0.6241  \\
+                Tiempo pico       & 6.3206 s \\
+                \hline
+        \end{tabular}
+\end{table}
+
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=\linewidth]{nonComp.png}
+        \caption{Respuesta de la planta sin compensación.}
+        \label{fig:nonComp}
+\end{figure}
+
+
+\subsection{Compensación PID}
+
+Se determinó una región admisible para los polos dominantes de lazo cerrado a partir de las especificaciones de sobreimpulso ($M_p \le 10\%$) y tiempo de asentamiento ($t_s \le 0.8$ s, criterio del 2\%):
+
+\begin{equation}\label{eq:zeta}
+\zeta \ge \frac{-\ln(M_p)}{\sqrt{\pi^2+\ln^2(M_p)}} \approx 0.591
+\end{equation}
+
+\begin{equation}\label{eq:zetawn}
+t_s \approx \frac{4}{\zeta\omega_n} \le 0.8\text{ s} \;\Rightarrow\; \zeta\omega_n \ge 5
+\end{equation}
+
+La condición de sobreimpulso fija un valor mínimo de amortiguamiento, mientras que la condición de tiempo de asentamiento fija un valor mínimo para la magnitud de la parte real de los polos dominantes. Ambas restricciones definen una región admisible en el semiplano izquierdo del plano $s$, cuyo vértice teórico se ubica aproximadamente en $-5\pm j6.8$.
+
+Se propuso un controlador PID en la forma
+
+\begin{equation}\label{eq:PID-generico}
+C(s)=\frac{K(s+z_1)(s+z_2)}{s}
+\end{equation}
+
+\noindent El polo en el origen corresponde a la acción integral pura del PID; su presencia es necesaria porque la realimentación del sistema es $H(s)=0.2\ne1$, y sin acción integral el error de estado estacionario ante entrada escalón sería finito y no nulo, lo cual viola una especificación explícita del problema.
+
+La ubicación de los ceros del controlador se ajustó de forma gráfica utilizando la herramienta \textit{Root Locus Designer} de MATLAB, desplazando iterativamente los ceros hasta que las ramas del lugar de las raíces, dentro de la región admisible definida por las ecuaciones \eqref{eq:zeta}--\eqref{eq:zetawn}, produjeran una respuesta que cumpliera ambas especificaciones. Este procedimiento gráfico convergió a $z_1=15.87$ y $z_2=17.89$, con una ganancia $K=208.82$ obtenida automáticamente por la herramienta mediante la condición de magnitud del lugar de las raíces en el punto de cruce seleccionado.
+
+\begin{equation}\label{eq:Controlador}
+C(s)=\frac{208.82(s+15.87)(s+17.89)}{s}
+\end{equation}
+
+A diferencia de lo anticipado por el vértice teórico de la región admisible (que corresponde a un par de polos complejos conjugados), la verificación numérica de los polos de lazo cerrado mediante \texttt{damp} mostró que, para este controlador, todos los polos resultan reales:
+
+\begin{equation}
+\begin{aligned}
+s_1&=-2.0003,\qquad s_2=-14.9049,\\
+s_3&=-20.2195,\qquad s_4=-393.52.
+\end{aligned}
+\end{equation}
+
+Esto corresponde a una respuesta sobre-amortiguada, lo cual es consistente con el bajo sobreimpulso obtenido (Tabla \ref{tab:caracteristicas-respuesta}) y sigue satisfaciendo ampliamente ambas especificaciones de diseño.
+
+Se observa además que $s_1\approx-2.0003$ coincide casi exactamente con el cero de la planta $z_p=-2$ (ecuación \eqref{eq:Planta}). En la función de transferencia de lazo cerrado
+
+\begin{equation}
+\small
+T(s)=\frac{2088.2\,(s+15.87)(s+17.89)(s+2)}
+{(s+393.5)(s+20.22)(s+14.9)(s+2.0003)}
+\end{equation}
+
+este par polo--cero prácticamente se cancela, por lo que dicho modo, aunque es el más cercano al eje imaginario, no domina la respuesta transitoria. Esto se confirma al comparar con la aproximación de segundo orden que predeciría el siguiente polo más lento ($s_2=-14.9049$, que daría $t_s\approx4/14.9\approx0.268$~s): el tiempo de asentamiento real obtenido por simulación ($t_s=0.0486$~s) es considerablemente menor, lo que indica que ningún polo individual domina de forma clara la dinámica del sistema compensado, sino que la respuesta resulta de la combinación de los tres polos rápidos remanentes. Por ello, el cumplimiento de las especificaciones se verificó mediante simulación directa (Tabla \ref{tab:caracteristicas-respuesta} y Figura \ref{fig:PIDComp}), en lugar de mediante una aproximación analítica de polo dominante.
+
+\begin{table}[H]
+        \centering
+        \caption{Características de la respuesta transitoria}
+        \label{tab:caracteristicas-respuesta}
+        \begin{tabular}{lc}
+                \hline
+                \textbf{Parámetro} & \textbf{Valor} \\
+                \hline
+                Tiempo de subida       & 0.0046 s \\
+                Tiempo transitorio  & 0.0486 s \\
+                Tiempo de asentamiento   & 0.0486 s \\
+                Mínimo de asentamiento    & 4.5205 \\
+                Máximo de asentamiento    & 5.2140\\
+                Sobreimpulso      & 4.2790\% \\
+                Subimpulso     & 0\% \\
+                Pico           & 5.2140\\
+                Tiempo pico       & 0.0151 s \\
+                \hline
+        \end{tabular}
+\end{table}
+
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=\linewidth]{PIDComp.png}
+        \caption{Respuesta de la planta con compensación.}
+        \label{fig:PIDComp}
+\end{figure}
+
+Viéndose la figura \ref{fig:nonComp}, se aprecia que esta nunca llega al valor estacionario esperado, 5, sino que alcanza un máximo de 0.624. Nótese que el valor final de 5 es debido a que la realimentación no es unitaria, sino de 0.2.
+
+\subsection{Compensación adelanto, atraso o adelantoatraso}
+
+\printbibliography
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document}
