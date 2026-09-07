@@ -53,6 +53,197 @@
 \IEEEPARstart{E}{l} presente trabajo aborda el diseño de compensadores y controladores clásicos para dos sistemas realimentados. En el primer problema se diseña un compensador en atraso (lag) para mejorar el error en régimen permanente ante una entrada rampa. En el segundo, se diseña y compara un controlador PID (o alguna de sus simplificaciones) frente a una red de compensación, para una planta de tercer orden sujeta a especificaciones de tiempo de asentamiento, sobreimpulso y error nulo en estado estacionario. En ambos casos se presentan los resultados intermedios (lugar de las raíces, ecuaciones características) que sustentan las decisiones de diseño.
 
 \section{Problema 1}
+En este ejercicio se presenta un sistema, con una planta cuya función de transferencia
+es la que se describe en la ecuación \eqref{eq:Planta_1}.
+
+\begin{equation}
+        \begin{aligned}
+                G_p(s)=\frac{K}{s(s+5)}
+        \end{aligned}
+\label{eq:Planta_1}
+\end{equation}
+
+Además, se está ante un sistema de lazo cerrado con realimentación unitaria. Que con el valor actual
+de la ganancia $K$, presenta un $\%OS = 12\%$. Con esta información, resulta importante determinar el valor
+de dicha ganancia antes de efectuar cualquier cálculo o diseño sobre el sistema.
+
+Con el porcentaje de sobreimpulso dado, se puede determinar el factor de amortiguamiento $\zeta$ 
+mediante la ecuación \eqref{eq:Zeta_Planta_1}, según se muestra:
+
+\begin{equation}
+        \begin{aligned}
+                \zeta &= \frac{-\ln(\frac{\%OS}{100})}{\sqrt{\pi^2+\ln^2(\frac{\%OS}{100})}} \\
+                \zeta &= 0.559 \\
+        \end{aligned}
+\label{eq:Zeta_Planta_1}
+\end{equation}
+
+
+Por definición, la función de transferencia en lazo cerrado, que describe a este sistema,
+está dada de la siguiente manera:
+
+
+\begin{equation}
+        \begin{aligned}
+                T(s) &= \frac{G_p(s)}{1+H(s)G_p(s)} \\
+                     &= \frac{K}{s^2+5s+K} \\
+        \end{aligned}
+\label{eq:Planta_1_lazo_cerrado}
+\end{equation}
+
+Con esto, y por tratarse de un sistema de segundo orden, es posible determinar 
+la frecuencia natural $\omega_n$ mediante la ecuación \eqref{eq:Omega_n_Planta_1}.
+
+\begin{equation}
+        \begin{aligned}
+                2\zeta\omega_n &= 5 \\
+                \omega_n &= 4.4689 \\
+        \end{aligned}
+\label{eq:Omega_n_Planta_1}
+\end{equation}
+
+Con el valor de $\omega_n$ determinado, es posible calcular el valor de la ganancia $K$ al analizar la
+Ecuación~\eqref{eq:Planta_1_lazo_cerrado}, el cual da un valor de $K = 19.97$, redondeado, $K = 20$.
+
+\subsection{Error de régimen permanente con el sistema sin compensar}
+Para este caso, se solicita determinar el error ante una entrada tipo rampa. Cabe mencionar
+que este mismo error ante una entrada tipo escalón es nulo, al tratarse de un sistema de tipo 1 (con un integrador puro).
+La constante de error para una entrada tipo rampa, $K_v$, se determina de la siguiente forma:
+
+\begin{equation}
+        \begin{aligned}
+                K_v &= \lim_{s\to 0} sG_p(s) \\
+                K_v &= \lim_{s\to 0} s\frac{K}{s(s+5)} \\
+                K_v &= \lim_{s\to 0} \frac{K}{s+5} \\
+                K_v &= \frac{20}{5} = 4
+        \end{aligned}
+\label{eq:Kv_Planta_1}
+\end{equation}
+
+Posteriormente, el error en régimen permanente, corresponde al inverso de la constante $K_v$:
+
+\begin{equation}
+        \begin{aligned}
+                e_{ss}(\infty) &= \frac{1}{K_v} \\
+                e_{ss}(\infty) &= \frac{1}{4} = 0.25
+        \end{aligned}
+\label{eq:Error_Planta_1}
+\end{equation}
+
+Como se evidencia en el resultado obtenido anteriormente, ante una entrada tipo rampa unitaria, el
+sistema no es capaz de lograr un error nulo, por lo que la respuesta tendrá una forma similar al de una 
+rampa unitaria, pero sin ser exactamente igual, según se muestra en la Figura~\ref{fig:Ej1_respuesta_sinCompensar}; además, 
+la evolución del error a lo largo del tiempo, se muestra en la Figura~\ref{fig:Ej1_error_sinCompensar}.
+
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=\linewidth]{Ej1_respuesta_sin_compensador.png}
+        \caption{Respuesta del sistema sin compensar, ante una entrada tipo rampa unitaria.}
+        \label{fig:Ej1_respuesta_sinCompensar}
+\end{figure}
+
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=\linewidth]{Ej1_error_sin_compensador.png}
+        \caption{Evolución del error del sistema sin compensar, ante una entrada tipo rampa unitaria.}
+        \label{fig:Ej1_error_sinCompensar}
+\end{figure}
+
+\subsection{Diseño de un compensador en atraso (lag)}
+Con la finalidad de solucionar el problema que presenta el sistema, al no poder lograr un error nulo en estado
+estacionario solo con un compensador proporcional, se solicita el diseño de un compensador de atraso (tipo lag),
+que logre reducir el error en un factor de 15.
+
+Para diseñarlo, se parte por determinar la cantidad de error deaseada, al disminuirse por un factor
+de 15, este es:
+
+\begin{equation}
+        \begin{aligned}
+                e_{ss,~C}(\infty) &= \frac{0.25}{15} = \frac{1}{60} \approx 0.0167
+        \end{aligned}
+\label{eq:Error_Planta_1_compensada}
+\end{equation}
+
+Con lo cual, la nueva constante de error, $K_v$, corresponde a:
+
+\begin{equation}
+        \begin{aligned}
+                K_v &= \frac{1}{e_{ss,~C}(\infty)} = 60
+        \end{aligned}
+\label{eq:Kv_Planta_1_compensada}
+\end{equation}
+
+Posteriormente, se sabe que la constante de error $K_v$, también se puede calcular mediante la multiplicación
+de la ganancia del sistema, $K$, por la magnitud de cada uno de los ceros, dividido entre la multiplicación
+de la magnitud de cada uno de los polos. Además, al agregar el compensador de atraso, se le suma a esta multiplicación
+la magnitud del cero y del polo del compensador (Ecuación~\eqref{eq:Kv_Planta_1_compensada_2}).
+
+\begin{equation}
+        \begin{aligned}
+                K_v &= \frac{K \cdot z_c \cdot z_1 \cdot z_2~...}{p_c \cdot p_1 \cdot p_2~...} \\
+        \end{aligned}
+\label{eq:Kv_Planta_1_compensada_2}
+\end{equation}
+
+Al analizar estos dos escenario, y considerando que la ganancia proporcional, $K$, es igual en ambos casos.
+Se puede establecer la siguiente relación:
+
+\begin{equation}
+        \begin{aligned}
+                \frac{K_{v_N}}{K_{v_O}} &= \frac{z_c}{p_c} \\
+        \end{aligned}
+\label{eq:Kv_Planta_1_compensada_3}
+\end{equation}
+
+Con lo cual, al escoger una ubicacion arbitraria para el polo del compensador en $\sigma = -0.01$,
+se obtiene que el cero del compensador debe ubicarse en $\sigma = -0.15$, para cumplir con la relación
+de la ecuación \eqref{eq:Kv_Planta_1_compensada_3}. 
+Por lo que la función de transferencia del compensador de atraso (lag) es la siguiente:
+
+\begin{equation}
+        \begin{aligned}
+                C_{lag}(s) &= \frac{s+0.15}{s+0.01} \\
+        \end{aligned}
+\label{eq:Compensador_Planta_1}
+\end{equation}
+
+Finalmente, en la Figura~\ref{fig:Ej1_respuesta_conCompensador}, se muestra la respuesta del sistema compensado, 
+ante una entrada tipo rampa unitaria. Mientras que la evolución del error del sistema ya compensado, se muestra en 
+la Figura~\ref{fig:Ej1_error_conCompensador}.
+
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=\linewidth]{Ej1_respuesta_con_compensador.png}
+        \caption{Respuesta del sistema compensado, ante una entrada tipo rampa unitaria.}
+        \label{fig:Ej1_respuesta_conCompensador}
+\end{figure}
+
+\subsection{Error de régimen permanente con el sistema compensado}
+El valor de error en régimen permanente del sistema con el compensador ya implementado, 
+se calcula primero obteniendo la constante de error mediante la ecuación~\eqref{eq:Kv_Planta_1_compensada_2}:
+
+\begin{equation}
+        \begin{aligned}
+                K_v &= \frac{20 \cdot 0.15}{0.01 \cdot 5} = 60 \\
+        \end{aligned}
+\label{eq:Kv_Planta_1_compensada_4}
+\end{equation}
+
+con lo que se obtiene un error en régimen permanente de $e_{ss,~C}(\infty) \approx 0.0167$. El cual
+concuerda perfectamente con el obtenido en la ecuación~\eqref{eq:Error_Planta_1_compensada}.
+
+\begin{figure}[H]
+        \centering
+        \includegraphics[width=\linewidth]{Ej1_error_con_compensador.png}
+        \caption{Evolución del error del sistema compensado, ante una entrada tipo rampa unitaria.}
+        \label{fig:Ej1_error_conCompensador}
+\end{figure}
+
+\subsection{Evaluación de mejora}
+En términos generales, y por la forma en la que se diseñó el compensador de atraso. Este logra cumplir con lo deseado, 
+reduciendo el error en régimen permanente en un factor de 15. Esto equivale a que el error final corresponda únicamente 
+al $6.67\%$ del error original, es decir, una reducción porcentual del $93.33\%$ aproximadamente.
+Todo esto se puede verificar fácilmente al comparar la Figura~\ref{fig:Ej1_error_sinCompensar}, contra la Figura~\ref{fig:Ej1_error_conCompensador}.
 
 
 \section{Problema 2}

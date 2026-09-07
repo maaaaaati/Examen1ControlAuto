@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.18)  25 AUG 2026 09:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.18)  6 SEP 2026 22:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/LaTex/informes_LabControl/Lab_01/Informe/informe1.tex
-(c:/LaTex/informes_LabControl/Lab_01/Informe/informe1.tex
+**c:/LaTex/Examen1ControlAuto/Informe/informe1.tex
+(c:/LaTex/Examen1ControlAuto/Informe/informe1.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
 (C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex/latex/ieeetran\IEEEtran.cls
@@ -1170,11 +1170,11 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 LaTeX Font Info:    Trying to load font information for T1+phv on input line 32.
 (C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
-) (c:\LaTex\informes_LabControl\Lab_01\Informe\build\informe1.aux
-LaTeX Info: Redefining \. on input line 12.
-LaTeX Info: Redefining \% on input line 12.
+) (c:\LaTex\Examen1ControlAuto\Informe\build\informe1.aux
+LaTeX Info: Redefining \. on input line 8.
+LaTeX Info: Redefining \% on input line 8.
 Package babel Info: 'spanish' activates 'spanish' shorthands.
-(babel)             Reported on input line 12.
+(babel)             Reported on input line 8.
 )
 \openout1 = `informe1.aux'.
 
@@ -1272,7 +1272,7 @@ Package caption Info: hyperref package is loaded.
 Package caption Info: rotating package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package hyperref Info: Link coloring OFF on input line 32.
- (c:\LaTex\informes_LabControl\Lab_01\Informe\build\informe1.out) (c:\LaTex\informes_LabControl\Lab_01\Informe\build\informe1.out)
+ (c:\LaTex\Examen1ControlAuto\Informe\build\informe1.out) (c:\LaTex\Examen1ControlAuto\Informe\build\informe1.out)
 \@outlinefile=\write5
 \openout5 = `informe1.out'.
 
@@ -1323,149 +1323,171 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'informe1.bbl' found.
- (c:\LaTex\informes_LabControl\Lab_01\Informe\build\informe1.bbl)
+ (c:\LaTex\Examen1ControlAuto\Informe\build\informe1.bbl)
 Package biblatex Info: Reference section=0 on input line 32.
 Package biblatex Info: Reference segment=0 on input line 32.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 70.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 59.
  (C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 70.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 59.
  (C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 70.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 59.
  (C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex/latex/jknappen\ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Trying to load font information for U+trsy on input line 70.
+LaTeX Font Info:    Trying to load font information for U+trsy on input line 59.
  (C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex/latex/trsym\utrsy.fd
 File: utrsy.fd 2000/06/25v1.0transformation symbol font definitions
 )
-<./fig/TCLab.jpg, id=80, 1161.58969pt x 896.59969pt>
-File: ./fig/TCLab.jpg Graphic file (type jpg)
-<use ./fig/TCLab.jpg>
-Package pdftex.def Info: ./fig/TCLab.jpg  used on input line 91.
-(pdftex.def)             Requested size: 158.7558pt x 122.52696pt.
+<./fig/Ej1_respuesta_sin_compensador.png, id=48, 362.007pt x 216.372pt>
+File: ./fig/Ej1_respuesta_sin_compensador.png Graphic file (type png)
+<use ./fig/Ej1_respuesta_sin_compensador.png>
+Package pdftex.def Info: ./fig/Ej1_respuesta_sin_compensador.png  used on input line 140.
+(pdftex.def)             Requested size: 244.24199pt x 145.98535pt.
+<./fig/Ej1_error_sin_compensador.png, id=50, 362.664pt x 216.372pt>
+File: ./fig/Ej1_error_sin_compensador.png Graphic file (type png)
+<use ./fig/Ej1_error_sin_compensador.png>
+Package pdftex.def Info: ./fig/Ej1_error_sin_compensador.png  used on input line 147.
+(pdftex.def)             Requested size: 244.24199pt x 145.72122pt.
+ [1{C:/Users/pablo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
 
-Underfull \hbox (badness 10000) in paragraph at lines 126--126
-[]|\T1/phv/m/n/10 Matías A. Ca-ma-
+
+ <./fig/Ej1_respuesta_sin_compensador.png>]
+<./fig/Ej1_respuesta_con_compensador.png, id=79, 361.35pt x 220.971pt>
+File: ./fig/Ej1_respuesta_con_compensador.png Graphic file (type png)
+<use ./fig/Ej1_respuesta_con_compensador.png>
+Package pdftex.def Info: ./fig/Ej1_respuesta_con_compensador.png  used on input line 216.
+(pdftex.def)             Requested size: 244.24199pt x 149.35802pt.
+<./fig/Ej1_error_con_compensador.png, id=82, 361.35pt x 220.971pt>
+File: ./fig/Ej1_error_con_compensador.png Graphic file (type png)
+<use ./fig/Ej1_error_con_compensador.png>
+Package pdftex.def Info: ./fig/Ej1_error_con_compensador.png  used on input line 237.
+(pdftex.def)             Requested size: 244.24199pt x 149.35802pt.
+ [2 <./fig/Ej1_error_sin_compensador.png> <./fig/Ej1_respuesta_con_compensador.png> <./fig/Ej1_error_con_compensador.png>]
+Underfull \hbox (badness 1946) in paragraph at lines 250--251
+[]\T1/phv/m/n/10 Se con-si-de-ró la si-guien-te plan-ta de ter-cer or-
  []
 
-[1{C:/Users/pablo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
-
-
- <./fig/TCLab.jpg>]
-<./fig/experimento_escalonQ1.png, id=105, 393.762pt x 239.367pt>
-File: ./fig/experimento_escalonQ1.png Graphic file (type png)
-<use ./fig/experimento_escalonQ1.png>
-Package pdftex.def Info: ./fig/experimento_escalonQ1.png  used on input line 183.
-(pdftex.def)             Requested size: 219.8163pt x 133.62822pt.
-<./fig/experimento_multiQ1.png, id=108, 403.398pt x 216.81pt>
-File: ./fig/experimento_multiQ1.png Graphic file (type png)
-<use ./fig/experimento_multiQ1.png>
-Package pdftex.def Info: ./fig/experimento_multiQ1.png  used on input line 198.
-(pdftex.def)             Requested size: 219.8163pt x 118.1409pt.
- [2 <./fig/experimento_escalonQ1.png> <./fig/experimento_multiQ1.png>]
-Underfull \hbox (badness 1888) in paragraph at lines 217--219
-[]\T1/phv/m/n/10 La evo-lu-ción de es-te pro-ce-so de iden-ti-fi-ca-ción
- []
-
-<./fig/identFOPDT_escalonQ1.png, id=119, 362.007pt x 384.564pt>
-File: ./fig/identFOPDT_escalonQ1.png Graphic file (type png)
-<use ./fig/identFOPDT_escalonQ1.png>
-Package pdftex.def Info: ./fig/identFOPDT_escalonQ1.png  used on input line 222.
-(pdftex.def)             Requested size: 219.8163pt x 233.51572pt.
-<./fig/ValCruzadaMultiescalonConFOPDTdeEscalon.png, id=122, 361.35pt x 216.81pt>
-File: ./fig/ValCruzadaMultiescalonConFOPDTdeEscalon.png Graphic file (type png)
-<use ./fig/ValCruzadaMultiescalonConFOPDTdeEscalon.png>
-Package pdftex.def Info: ./fig/ValCruzadaMultiescalonConFOPDTdeEscalon.png  used on input line 282.
-(pdftex.def)             Requested size: 195.39433pt x 117.23775pt.
-<./fig/Escalones.png, id=123, 361.35pt x 216.81pt>
-File: ./fig/Escalones.png Graphic file (type png)
-<use ./fig/Escalones.png>
-Package pdftex.def Info: ./fig/Escalones.png  used on input line 289.
-(pdftex.def)             Requested size: 195.39433pt x 117.23775pt.
-<./fig/ResiduoValCruzadaMultiescalonConFOPDTdeEscalon.png, id=124, 361.35pt x 216.81pt>
-File: ./fig/ResiduoValCruzadaMultiescalonConFOPDTdeEscalon.png Graphic file (type png)
-<use ./fig/ResiduoValCruzadaMultiescalonConFOPDTdeEscalon.png>
-Package pdftex.def Info: ./fig/ResiduoValCruzadaMultiescalonConFOPDTdeEscalon.png  used on input line 296.
-(pdftex.def)             Requested size: 195.39433pt x 117.23775pt.
-<./fig/ValCruzadaEscalonConFOPDTdeMultiescalon.png, id=125, 361.131pt x 219.876pt>
-File: ./fig/ValCruzadaEscalonConFOPDTdeMultiescalon.png Graphic file (type png)
-<use ./fig/ValCruzadaEscalonConFOPDTdeMultiescalon.png>
-Package pdftex.def Info: ./fig/ValCruzadaEscalonConFOPDTdeMultiescalon.png  used on input line 320.
-(pdftex.def)             Requested size: 195.39433pt x 118.96611pt.
-
-Underfull \vbox (badness 1033) has occurred while \output is active []
-
- [3 <./fig/identFOPDT_escalonQ1.png> <./fig/ValCruzadaMultiescalonConFOPDTdeEscalon.png> <./fig/Escalones.png> <./fig/ResiduoValCruzadaMultiescalonConFOPDTdeEscalon.png>]
-<./fig/Escalon.png, id=141, 361.35pt x 219.438pt>
-File: ./fig/Escalon.png Graphic file (type png)
-<use ./fig/Escalon.png>
-Package pdftex.def Info: ./fig/Escalon.png  used on input line 327.
-(pdftex.def)             Requested size: 195.39433pt x 118.65881pt.
-<./fig/ResiduoValCruzadaEscalonConFOPDTdeMultiescalon.png, id=142, 361.131pt x 216.591pt>
-File: ./fig/ResiduoValCruzadaEscalonConFOPDTdeMultiescalon.png Graphic file (type png)
-<use ./fig/ResiduoValCruzadaEscalonConFOPDTdeMultiescalon.png>
-Package pdftex.def Info: ./fig/ResiduoValCruzadaEscalonConFOPDTdeMultiescalon.png  used on input line 334.
-(pdftex.def)             Requested size: 195.39433pt x 117.18874pt.
-
-Overfull \hbox (6.28033pt too wide) in paragraph at lines 407--407
- []|\T1/phv/b/n/10 Parámetro 
+<./fig/nonComp.png, id=101, 361.35pt x 216.81pt>
+File: ./fig/nonComp.png Graphic file (type png)
+<use ./fig/nonComp.png>
+Package pdftex.def Info: ./fig/nonComp.png  used on input line 279.
+(pdftex.def)             Requested size: 244.24199pt x 146.54553pt.
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 313.
+(C:\Users\pablo\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 322--323
+[]\T1/phv/m/n/10 Esto co-rres-pon-de a una res-pues-ta sobre-
  []
 
 
-Overfull \hbox (23.58485pt too wide) in paragraph at lines 407--407
- []|$\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 937801 []C\OML/cmm/m/it/10 = \OT1/cmr/m/n/10 %[]$| 
+Underfull \hbox (badness 2547) in paragraph at lines 322--323
+\T1/phv/m/n/10 amortiguada, lo cual es con-sis-ten-te con el ba-jo
  []
 
 
-Overfull \hbox (3.66801pt too wide) in paragraph at lines 407--407
- []|$\OT1/cmr/m/n/10 3\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 203932 []C\OML/cmm/m/it/10 = \OT1/cmr/m/n/10 %[]$| 
- []
+LaTeX Font Warning: Command \small invalid in math mode on input line 327.
+
+LaTeX Font Info:    Calculating math sizes for size <> on input line 330.
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <> not available
+(Font)              size <5> substituted on input line 330.
 
 
-Overfull \hbox (15.39026pt too wide) in paragraph at lines 407--407
- []|$\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 016926 []C\OML/cmm/m/it/10 =\OT1/cmr/m/n/10 ( %[]s)$| 
- []
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <0.7> not available
+(Font)              size <5> substituted on input line 330.
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <0.5> not available
+(Font)              size <5> substituted on input line 330.
 
- [4 <./fig/ValCruzadaEscalonConFOPDTdeMultiescalon.png> <./fig/Escalon.png> <./fig/ResiduoValCruzadaEscalonConFOPDTdeMultiescalon.png>]
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <> not available
+(Font)              size <5> substituted on input line 330.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <0.7> not available
+(Font)              size <5> substituted on input line 330.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <0.5> not available
+(Font)              size <5> substituted on input line 330.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <> not available
+(Font)              size <5> substituted on input line 330.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <0.7> not available
+(Font)              size <5> substituted on input line 330.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <0.5> not available
+(Font)              size <5> substituted on input line 330.
+
+
+LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <> not available
+(Font)              size <5> substituted on input line 330.
+
+
+LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <0.7> not available
+(Font)              size <5> substituted on input line 330.
+
+
+LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <0.5> not available
+(Font)              size <5> substituted on input line 330.
+
+[3 <./fig/nonComp.png>]
+<./fig/PIDComp.png, id=126, 361.35pt x 219.438pt>
+File: ./fig/PIDComp.png Graphic file (type png)
+<use ./fig/PIDComp.png>
+Package pdftex.def Info: ./fig/PIDComp.png  used on input line 357.
+(pdftex.def)             Requested size: 244.24199pt x 148.32184pt.
+
+
+LaTeX Warning: Empty bibliography on input line 366.
+
 \tf@thm=\write6
 \openout6 = `informe1.thm'.
 
- [5
+[4
 
-] (c:\LaTex\informes_LabControl\Lab_01\Informe\build\informe1.aux
-LaTeX Info: Redefining \sptext on input line 12.
-LaTeX Info: Redefining \. on input line 12.
-LaTeX Info: Redefining \% on input line 12.
+ <./fig/PIDComp.png>] (c:\LaTex\Examen1ControlAuto\Informe\build\informe1.aux
+LaTeX Info: Redefining \sptext on input line 8.
+LaTeX Info: Redefining \. on input line 8.
+LaTeX Info: Redefining \% on input line 8.
 )
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
+
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 4.5pt have occurred.
+
 Package rerunfilecheck Info: File `informe1.out' has not changed.
-(rerunfilecheck)             Checksum: 46A41861FA6513ED89C6F4A8CB446E28;3162.
+(rerunfilecheck)             Checksum: 5703E01AFC73D20E90BF68FB561050C1;1903.
 Package logreq Info: Writing requests to 'informe1.run.xml'.
 \openout1 = `informe1.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 58098 strings out of 467867
- 1379007 string characters out of 5418334
- 2469454 words of memory out of 5000000
- 86286 multiletter control sequences out of 15000+600000
- 757896 words of font info for 164 fonts, out of 8000000 for 9000
+ 57914 strings out of 467867
+ 1373565 string characters out of 5418334
+ 2472471 words of memory out of 5000000
+ 86102 multiletter control sequences out of 15000+600000
+ 765956 words of font info for 203 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 117i,14n,121p,1245b,1809s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on c:\LaTex\informes_LabControl\Lab_01\Informe\build\informe1.pdf (5 pages, 917022 bytes).
+ 117i,10n,121p,1237b,1809s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/pablo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on c:\LaTex\Examen1ControlAuto\Informe\build\informe1.pdf (4 pages, 406130 bytes).
 PDF statistics:
- 228 PDF objects out of 1000 (max. 8388607)
- 52 named destinations out of 1000 (max. 500000)
- 207 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 204 PDF objects out of 1000 (max. 8388607)
+ 41 named destinations out of 1000 (max. 500000)
+ 115 words of extra memory for PDF output out of 10000 (max. 10000000)
 
